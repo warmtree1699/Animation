@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime.js SVG Path Logo 動畫</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Anime.js SVG Path Logo 動畫</h1>
+
+        <!-- Logo 1: 閃電 Logo -->
+        <section class="demo-section">
+            <h2>範例 1: 閃電 Logo - 線條描繪</h2>
+            <button class="replay-btn" data-animation="lightning">重播</button>
+            <svg class="logo-svg" viewBox="0 0 200 200" id="lightning-logo">
+                <path class="logo-path lightning-path"
+                      d="M 100 20 L 70 90 L 100 90 L 80 160 L 140 80 L 110 80 L 130 20 Z"
+                      stroke="#fbbf24"
+                      stroke-width="4"
+                      fill="none"/>
+            </svg>
+        </section>
+
+        <!-- Logo 2: 文字 Logo -->
+        <section class="demo-section">
+            <h2>範例 2: 文字 Logo - TECH</h2>
+            <button class="replay-btn" data-animation="text">重播</button>
+            <svg class="logo-svg" viewBox="0 0 400 100" id="text-logo">
+                <!-- T -->
+                <path class="letter-path" d="M 20 20 L 80 20 M 50 20 L 50 80"
+                      stroke="#667eea" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <!-- E -->
+                <path class="letter-path" d="M 100 20 L 140 20 M 100 20 L 100 80 M 100 50 L 130 50 M 100 80 L 140 80"
+                      stroke="#667eea" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <!-- C -->
+                <path class="letter-path" d="M 180 20 Q 160 20 160 50 T 180 80"
+                      stroke="#667eea" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <!-- H -->
+                <path class="letter-path" d="M 200 20 L 200 80 M 200 50 L 240 50 M 240 20 L 240 80"
+                      stroke="#667eea" stroke-width="6" fill="none" stroke-linecap="round"/>
+            </svg>
+        </section>
+
+        <!-- Logo 3: 圓形 Logo -->
+        <section class="demo-section">
+            <h2>範例 3: 圓形品牌 Logo</h2>
+            <button class="replay-btn" data-animation="circle">重播</button>
+            <svg class="logo-svg" viewBox="0 0 200 200" id="circle-logo">
+                <!-- 外圓 -->
+                <circle class="circle-path-1" cx="100" cy="100" r="80"
+                        stroke="#f093fb" stroke-width="3" fill="none"/>
+                <!-- 內圓 -->
+                <circle class="circle-path-2" cx="100" cy="100" r="60"
+                        stroke="#f5576c" stroke-width="3" fill="none"/>
+                <!-- 中心圖案 -->
+                <path class="center-icon"
+                      d="M 100 60 L 120 90 L 100 85 L 80 90 Z"
+                      fill="#f5576c"/>
+            </svg>
+        </section>
+
+        <!-- Logo 4: 六邊形科技 Logo -->
+        <section class="demo-section">
+            <h2>範例 4: 六邊形科技 Logo</h2>
+            <button class="replay-btn" data-animation="hexagon">重播</button>
+            <svg class="logo-svg" viewBox="0 0 200 200" id="hexagon-logo">
+                <!-- 外六邊形 -->
+                <path class="hex-path hex-outer"
+                      d="M 100 20 L 160 55 L 160 125 L 100 160 L 40 125 L 40 55 Z"
+                      stroke="#4facfe" stroke-width="3" fill="none"/>
+                <!-- 內六邊形 -->
+                <path class="hex-path hex-inner"
+                      d="M 100 50 L 130 70 L 130 110 L 100 130 L 70 110 L 70 70 Z"
+                      stroke="#00f2fe" stroke-width="3" fill="none"/>
+                <!-- 中心點 -->
+                <circle class="hex-center" cx="100" cy="90" r="0" fill="#00f2fe"/>
+            </svg>
+        </section>
+
+        <!-- Logo 5: 無限符號 Logo -->
+        <section class="demo-section">
+            <h2>範例 5: 無限符號 Logo</h2>
+            <button class="replay-btn" data-animation="infinity">重播</button>
+            <svg class="logo-svg" viewBox="0 0 300 150" id="infinity-logo">
+                <path class="infinity-path"
+                      d="M 50 75 Q 75 25, 100 75 T 150 75 Q 175 125, 200 75 T 250 75"
+                      stroke="#a8edea" stroke-width="5" fill="none" stroke-linecap="round"/>
+            </svg>
+        </section>
+
+        <!-- Logo 6: 心形 Logo -->
+        <section class="demo-section">
+            <h2>範例 6: 心形 Logo</h2>
+            <button class="replay-btn" data-animation="heart">重播</button>
+            <svg class="logo-svg" viewBox="0 0 200 200" id="heart-logo">
+                <path class="heart-path"
+                      d="M 100 150 Q 80 120, 60 100 Q 40 80, 40 60 Q 40 30, 60 30 Q 80 30, 100 50 Q 120 30, 140 30 Q 160 30, 160 60 Q 160 80, 140 100 Q 120 120, 100 150 Z"
+                      stroke="#ff6b9d" stroke-width="3" fill="none"/>
+            </svg>
+        </section>
+
+        <!-- Logo 7: 星星 Logo -->
+        <section class="demo-section">
+            <h2>範例 7: 星星 Logo</h2>
+            <button class="replay-btn" data-animation="star">重播</button>
+            <svg class="logo-svg" viewBox="0 0 200 200" id="star-logo">
+                <path class="star-path"
+                      d="M 100 20 L 115 70 L 170 70 L 125 105 L 145 160 L 100 125 L 55 160 L 75 105 L 30 70 L 85 70 Z"
+                      stroke="#fbbf24" stroke-width="3" fill="none"/>
+            </svg>
+        </section>
+
+        <!-- Logo 8: 齒輪 Logo -->
+        <section class="demo-section">
+            <h2>範例 8: 齒輪 Logo - 複雜路徑</h2>
+            <button class="replay-btn" data-animation="gear">重播</button>
+            <svg class="logo-svg" viewBox="0 0 200 200" id="gear-logo">
+                <path class="gear-path"
+                      d="M 100 40 L 110 50 L 110 70 L 130 70 L 140 60 L 150 70 L 150 90 L 140 100 L 150 110 L 150 130 L 140 140 L 130 130 L 110 130 L 110 150 L 100 160 L 90 150 L 90 130 L 70 130 L 60 140 L 50 130 L 50 110 L 60 100 L 50 90 L 50 70 L 60 60 L 70 70 L 90 70 L 90 50 Z"
+                      stroke="#764ba2" stroke-width="3" fill="none"/>
+                <circle class="gear-center" cx="100" cy="100" r="0" fill="#764ba2"/>
+            </svg>
+        </section>
+
+        <!-- 全部重播按鈕 -->
+        <section class="demo-section controls">
+            <button id="replayAll" class="control-btn">重播所有動畫</button>
+        </section>
+    </div>
+
+    <!-- 引入 Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

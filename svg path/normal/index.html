@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Path Animation 範例</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>SVG Path Animation 範例集</h1>
+
+        <!-- 範例 1: 線條描繪動畫 (Stroke Drawing) -->
+        <section class="demo-section">
+            <h2>1. 線條描繪動畫 (Stroke Drawing)</h2>
+            <p>模擬手寫效果，常用於 Logo、簽名、插畫</p>
+            <svg class="demo-svg" viewBox="0 0 200 200">
+                <path class="draw-path" d="M 20 100 Q 60 20, 100 100 T 180 100"
+                      stroke="#667eea"
+                      stroke-width="3"
+                      fill="none"/>
+            </svg>
+        </section>
+
+        <!-- 範例 2: 圓形進度條 -->
+        <section class="demo-section">
+            <h2>2. 圓形進度條 (Circular Progress)</h2>
+            <p>常用於載入動畫、進度顯示</p>
+            <svg class="demo-svg" viewBox="0 0 200 200">
+                <circle class="progress-bg" cx="100" cy="100" r="80"
+                        stroke="#e2e8f0"
+                        stroke-width="10"
+                        fill="none"/>
+                <circle class="progress-bar" cx="100" cy="100" r="80"
+                        stroke="#667eea"
+                        stroke-width="10"
+                        fill="none"
+                        stroke-linecap="round"/>
+                <text x="100" y="110" text-anchor="middle" class="progress-text">75%</text>
+            </svg>
+        </section>
+
+        <!-- 範例 3: 打勾動畫 -->
+        <section class="demo-section">
+            <h2>3. 打勾動畫 (Checkmark)</h2>
+            <p>常用於表單驗證、成功提示</p>
+            <div class="checkmark-container">
+                <svg class="demo-svg checkmark-svg" viewBox="0 0 200 200">
+                    <circle class="checkmark-circle" cx="100" cy="100" r="80"
+                            stroke="#10b981"
+                            stroke-width="5"
+                            fill="none"/>
+                    <path class="checkmark-check" d="M 60 100 L 85 125 L 140 70"
+                          stroke="#10b981"
+                          stroke-width="5"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- 範例 4: Logo 描繪動畫 -->
+        <section class="demo-section">
+            <h2>4. Logo 描繪動畫</h2>
+            <p>品牌 Logo 登場效果</p>
+            <svg class="demo-svg logo-svg" viewBox="0 0 200 200">
+                <!-- 閃電 Logo -->
+                <path class="logo-path"
+                      d="M 100 20 L 70 90 L 100 90 L 80 160 L 140 80 L 110 80 L 130 20 Z"
+                      stroke="#fbbf24"
+                      stroke-width="3"
+                      fill="none"/>
+            </svg>
+        </section>
+
+        <!-- 範例 5: 路徑運動動畫 (Motion Along Path) -->
+        <section class="demo-section">
+            <h2>5. 路徑運動動畫 (Motion Along Path)</h2>
+            <p>物體沿著路徑移動</p>
+            <svg class="demo-svg" viewBox="0 0 400 200">
+                <!-- 路徑軌道 -->
+                <path id="motionPath"
+                      d="M 20 100 Q 120 20, 200 100 T 380 100"
+                      stroke="#cbd5e0"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-dasharray="5,5"/>
+
+                <!-- 移動的圓球 -->
+                <circle class="moving-circle" r="10" fill="#f5576c">
+                    <animateMotion
+                        dur="3s"
+                        repeatCount="indefinite"
+                        path="M 20 100 Q 120 20, 200 100 T 380 100"/>
+                </circle>
+            </svg>
+        </section>
+
+        <!-- 範例 6: 變形動畫 (Morphing) -->
+        <section class="demo-section">
+            <h2>6. 變形動畫 (Shape Morphing)</h2>
+            <p>形狀之間的平滑過渡</p>
+            <svg class="demo-svg morph-svg" viewBox="0 0 200 200">
+                <path class="morph-path"
+                      d="M 100 50 L 150 100 L 100 150 L 50 100 Z"
+                      fill="#667eea">
+                </path>
+            </svg>
+        </section>
+
+        <!-- 範例 7: 波浪動畫 -->
+        <section class="demo-section">
+            <h2>7. 波浪動畫 (Wave Animation)</h2>
+            <p>常用於水波、音波效果</p>
+            <svg class="demo-svg wave-svg" viewBox="0 0 400 200">
+                <path class="wave-path"
+                      d="M 0 100 Q 50 50, 100 100 T 200 100 T 300 100 T 400 100"
+                      stroke="#4facfe"
+                      stroke-width="3"
+                      fill="none"/>
+                <path class="wave-path wave-delay-1"
+                      d="M 0 100 Q 50 50, 100 100 T 200 100 T 300 100 T 400 100"
+                      stroke="#4facfe"
+                      stroke-width="3"
+                      fill="none"
+                      opacity="0.6"/>
+                <path class="wave-path wave-delay-2"
+                      d="M 0 100 Q 50 50, 100 100 T 200 100 T 300 100 T 400 100"
+                      stroke="#4facfe"
+                      stroke-width="3"
+                      fill="none"
+                      opacity="0.3"/>
+            </svg>
+        </section>
+
+        <!-- 範例 8: 脈衝動畫 -->
+        <section class="demo-section">
+            <h2>8. 脈衝動畫 (Pulse Effect)</h2>
+            <p>常用於通知、提示效果</p>
+            <svg class="demo-svg pulse-svg" viewBox="0 0 200 200">
+                <circle class="pulse-ring pulse-ring-1" cx="100" cy="100" r="30"
+                        stroke="#f093fb"
+                        stroke-width="2"
+                        fill="none"/>
+                <circle class="pulse-ring pulse-ring-2" cx="100" cy="100" r="30"
+                        stroke="#f093fb"
+                        stroke-width="2"
+                        fill="none"/>
+                <circle class="pulse-ring pulse-ring-3" cx="100" cy="100" r="30"
+                        stroke="#f093fb"
+                        stroke-width="2"
+                        fill="none"/>
+                <circle cx="100" cy="100" r="20" fill="#f093fb"/>
+            </svg>
+        </section>
+
+        <!-- 控制按鈕 -->
+        <section class="demo-section controls">
+            <h2>動畫控制</h2>
+            <button id="restartBtn" class="control-btn">重新播放所有動畫</button>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+/* ====================
+   Base Styles
+   ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ====================
+   Demo Section
+   ==================== */
+.demo-section {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.demo-section h2 {
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.demo-section p {
+    color: #718096;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.demo-svg {
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ====================
+   1. 線條描繪動畫
+   ==================== */
+.draw-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 3s ease-in-out forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ====================
+   2. 圓形進度條
+   ==================== */
+.progress-bar {
+    stroke-dasharray: 502; /* 2 * PI * r (2 * 3.14 * 80) */
+    stroke-dashoffset: 502;
+    animation: progress 2s ease-out forwards;
+    animation-iteration-count: infinite;
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.progress-text {
+    font-size: 2rem;
+    font-weight: bold;
+    fill: #667eea;
+}
+
+@keyframes progress {
+    to {
+        stroke-dashoffset: 125.5; /* 75% progress */
+    }
+}
+
+/* ====================
+   3. 打勾動畫
+   ==================== */
+.checkmark-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkmark-svg {
+    max-width: 200px;
+}
+
+.checkmark-circle {
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
+    animation: checkmark-circle 0.6s ease-in-out forwards;
+    animation-iteration-count: infinite;
+}
+
+.checkmark-check {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    animation: checkmark-check 0.6s 0.3s ease-in-out forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes checkmark-circle {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes checkmark-check {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ====================
+   4. Logo 描繪動畫
+   ==================== */
+.logo-svg {
+    max-width: 200px;
+}
+
+.logo-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: logo-draw 2s ease-in-out forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes logo-draw {
+    50% {
+        stroke-dashoffset: 0;
+    }
+    51% {
+        fill: transparent;
+    }
+    100% {
+        stroke-dashoffset: 0;
+        fill: #fbbf24;
+    }
+}
+
+/* ====================
+   5. 路徑運動動畫
+   ==================== */
+.moving-circle {
+    filter: drop-shadow(0 4px 8px rgba(245, 87, 108, 0.4));
+}
+
+/* ====================
+   6. 變形動畫
+   ==================== */
+.morph-svg {
+    max-width: 200px;
+}
+
+.morph-path {
+    animation: morph 4s ease-in-out infinite;
+}
+
+@keyframes morph {
+    0%, 100% {
+        d: path("M 100 50 L 150 100 L 100 150 L 50 100 Z"); /* 菱形 */
+    }
+    25% {
+        d: path("M 50 50 L 150 50 L 150 150 L 50 150 Z"); /* 正方形 */
+    }
+    50% {
+        d: path("M 100 50 L 150 150 L 50 150 Z"); /* 三角形 */
+    }
+    75% {
+        d: path("M 100 50 C 150 50, 150 150, 100 150 C 50 150, 50 50, 100 50 Z"); /* 圓形 */
+    }
+}
+
+/* ====================
+   7. 波浪動畫
+   ==================== */
+.wave-path {
+    animation: wave 2s ease-in-out infinite;
+}
+
+.wave-delay-1 {
+    animation-delay: 0.2s;
+}
+
+.wave-delay-2 {
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+    0%, 100% {
+        d: path("M 0 100 Q 50 50, 100 100 T 200 100 T 300 100 T 400 100");
+    }
+    50% {
+        d: path("M 0 100 Q 50 150, 100 100 T 200 100 T 300 100 T 400 100");
+    }
+}
+
+/* ====================
+   8. 脈衝動畫
+   ==================== */
+.pulse-svg {
+    max-width: 200px;
+}
+
+.pulse-ring {
+    animation: pulse 2s ease-out infinite;
+}
+
+.pulse-ring-2 {
+    animation-delay: 0.5s;
+}
+
+.pulse-ring-3 {
+    animation-delay: 1s;
+}
+
+@keyframes pulse {
+    0% {
+        r: 20;
+        opacity: 1;
+        stroke-width: 3;
+    }
+    100% {
+        r: 60;
+        opacity: 0;
+        stroke-width: 0;
+    }
+}
+
+/* ====================
+   控制按鈕
+   ==================== */
+.controls {
+    text-align: center;
+}
+
+.control-btn {
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.control-btn:active {
+    transform: translateY(0);
+}
+
+/* ====================
+   響應式設計
+   ==================== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .demo-section {
+        padding: 1.5rem;
+    }
+
+    .demo-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .demo-svg {
+        height: 150px;
+    }
+}
+
+/* ====================
+   動畫暫停類別（用於重播）
+   ==================== */
+.animation-paused * {
+    animation-play-state: paused !important;
+}
